@@ -12,3 +12,30 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+*.log*
+classes/*
+images/
+
+dataSources/
+.ideaDataSources/
+
+### macOS ###
+*.DS_Store
+.AppleDouble
+.LSOverride
