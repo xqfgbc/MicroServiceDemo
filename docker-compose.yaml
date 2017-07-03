@@ -1,0 +1,28 @@
+version: '2'
+services:
+    migration:
+      build:
+        context: ./src/main/resources/infrastructure/migration
+        dockerfile: Dockerfile
+      environment:
+        DB_HOST: "db.dmpm"
+        DB_NAME: "program_management"
+        DB_USER: "dmpmUser"
+        DB_PASSWORD: "!QAZ@WSX3edc4rfv"
+      links:
+        - db:db.dmpm
+      volumes:
+        - "./src/main/resources/infrastructure/migration:/app"
+      depends_on:
+        - db
+
+    db:
+      image: "mysql:5.5.53"
+      privileged: true
+      ports:
+        - "3306:3306"
+      environment:
+        MYSQL_ROOT_PASSWORD: "!QAZ@WSX3edc"
+        MYSQL_DATABASE: "program_management"
+        MYSQL_USER: "dmpmUser"
+        MYSQL_PASSWORD: "!QAZ@WSX3edc4rfv"
